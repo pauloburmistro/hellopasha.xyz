@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Худи «Завтрак» // Паша Бурмистров</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="page-case">
+    <nav class="side-menu">
+        <!-- Блок переключения языка -->
+        <div class="lang-switcher">
+            <div class="lang-item active" data-lang="ru">
+                <span class="lang-icon-slot"><img src="icons/global.svg" alt="" class="lang-icon"></span>
+                <span class="lang-text">RU</span>
+            </div>
+            <div class="lang-item" data-lang="en">
+                <span class="lang-icon-slot"></span>
+                <span class="lang-text">EN</span>
+            </div>
+        </div>
+
+        <!-- Блок со ссылками меню -->
+        <ul class="menu-list">
+            <li class="menu-item" data-icon="icons/big-dot.svg">
+                <span class="menu-icon-slot"></span>
+                <a href="index.html" class="menu-link" data-ru="главная" data-en="main">main</a>
+            </li>
+            <li class="menu-item" data-icon="icons/big-dot-yellow.svg">
+                <span class="menu-icon-slot"></span>
+                <a href="index.html#about" class="menu-link" data-ru="обо мне" data-en="about me">about me</a>
+            </li>
+            <li class="menu-item active" data-icon="icons/big-dot-grey.svg">
+                <span class="menu-icon-slot">
+                    <img src="icons/big-dot-grey.svg" alt="" class="menu-icon">
+                </span>
+                <a href="index.html#projects" class="menu-link" data-ru="проекты" data-en="projects">projects</a>
+            </li>
+            <li class="menu-item" data-icon="icons/big-dot-lightblue.svg">
+                <span class="menu-icon-slot"></span>
+                <a href="index.html#contacts" class="menu-link" data-ru="контакты" data-en="contacts">contacts</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="page case-page active">
+        <a href="index.html#projects" class="back-btn">
+            <img src="icons/big-arrow.svg" alt="" class="back-btn-icon">
+            <span class="back-btn-text" data-ru="ВСЕ ПРОЕКТЫ" data-en="ALL PROJECTS">ALL PROJECTS</span>
+            <span class="back-btn-count">204px</span>
+        </a>
+
+        <div class="case-tag">
+            <img src="icons/hi.svg" class="icons-hi">
+            <span data-ru="ФИЗИЧЕСКИЙ ПРЕДМЕТ, ГРАФИКА" data-en="PHYSICAL OBJECT, GRAPHICS">ФИЗИЧЕСКИЙ ПРЕДМЕТ, ГРАФИКА</span>
+        </div>
+
+
+        <h1 class="case-title" data-ru="Худи «Завтрак, обед и ужин»" data-en="Hoodie «Breakfast, Lunch, and Dinner»">Худи «Завтрак, обед и ужин»</h1>
+
+        <div class="big-case-description">
+            <p class="case-description" data-lang-block="ru">
+                Худи с фирменным принтом на всю спину и небольшой вышевкой спереди. Глеб, спасибо за участие в съёмке
+            </p>
+            <p class="case-description" data-lang-block="en">
+                A hoodie featuring a signature full-back print and small embroidery on the front. Gleb, thanks for taking part in the shoot.    </p>
+        </div>
+
+                    <img src="img/hoodie zavtrak/1.jpg" alt="" class="case-image">
+                    <img src="img/hoodie zavtrak/2.jpg" alt="" class="case-image">
+                    <img src="img/hoodie zavtrak/3.jpg" alt="" class="case-image">
+                    <img src="img/hoodie zavtrak/4.jpg" alt="" class="case-image">
+                    <img src="img/hoodie zavtrak/5.jpg" alt="" class="case-image">
+
+    </section>
+        <script src="js/main.js"></script>
+</body>
+</html>

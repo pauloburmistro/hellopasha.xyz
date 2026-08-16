@@ -1,0 +1,721 @@
+/* ==========================================================================
+   0. ПОДКЛЮЧЕНИЕ КАСТОМНОГО ШРИФТА
+   ========================================================================== */
+@font-face {
+    font-family: 'SUPA Bakema';
+    src: url('../fonts/noddef_supa-bakema_vsds-2.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dottective';
+    src: url('../fonts/ComicRelief-Regular.ttf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ==========================================================================
+   1. ГЛОБАЛЬНЫЕ НАСТРОЙКИ СТРАНИЦЫ И БАЗОВЫЕ КЛАССЫ
+   ========================================================================== */
+body {
+    font-family: 'SUPA Bakema', 'Inter', sans-serif;
+    font-weight: 400;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+}
+
+body.page-main {
+    background-image: url('../img/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body.page-about { background-color: #FFD87C; }
+body.page-projects { background-color: #EFEFEF; }
+body.page-contacts { background-color: #8FC5FF; }
+
+.page-contacts {
+    padding-top: 399px;
+}
+
+[data-lang-block] {
+    display: none;
+}
+
+html.lang-ru [data-lang-block="ru"] {
+    display: block;
+}
+
+html.lang-en [data-lang-block="en"] {
+    display: block;
+}
+
+.side-menu {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: fit-content;
+    padding: 64px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.page-content {
+    margin-left: 340px;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.page {
+    display: none;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.page.active {
+    display: block;
+}
+
+/* ==========================================================================
+   2. СЕКЦИЯ ОБ МНЕ (ABOUT ME) И ОБЩИЕ СТИЛИ ССЫЛОК/ТЕКСТА
+   ========================================================================== */
+#page-about {
+    box-sizing: border-box;
+        overflow-y: auto;
+}
+
+.img-of-me {
+    height: 250px;
+    width: 380px;
+    padding-bottom: 18px;
+    padding-top: 64px;
+}
+
+.justtext {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.3;
+    max-width: 700px;
+}
+
+.orange-link {
+    color: #000000;
+    text-decoration: none;
+    background-color: #ffc65c;
+    padding: 0px;
+    display: inline-block;
+}
+
+.orange-link:hover {
+    background-color: #ffbc40;
+}
+
+.blue-link {
+    color: #000000;
+    text-decoration: none;
+    background-color: #81baff;
+    padding: 0px;
+    display: inline-block;
+}
+.blue-link:hover {
+    background-color: #6fb0ff;
+}
+
+/* ==========================================================================
+   3. ЛЕВОЕ МЕНЮ НАВИГАЦИИ И ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ
+   ========================================================================== */
+.lang-switcher {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    padding-bottom: 200px;
+}
+
+.lang-item {
+    display: flex;
+    align-items: center;
+}
+
+.lang-icon-slot {
+    width: 32px;
+    height: 32px;
+    margin-right: 2px;
+    flex-shrink: 0;
+}
+
+.lang-icon {
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+
+.lang-item:not(.active):hover .lang-icon-slot {
+    background-image: url('../icons/tiny-dot.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.lang-item {
+    cursor: pointer;
+}
+
+.lang-text, .menu-list a {
+    font-weight: 300;
+    font-size: 24px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu-icon-slot {
+    width: 32px;
+    height: 32px;
+    margin-right: 2px;
+    flex-shrink: 0;
+}
+
+.menu-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.menu-item:not(.active):hover .menu-icon-slot {
+    background-image: url('../icons/tiny-dot.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* ==========================================================================
+   4. СЕКЦИЯ ПРОЕКТОВ (ФИЛЬТРЫ И ДИНАМИЧЕСКИЙ СЧЕТЧИК)
+   ========================================================================== */
+#page-projects {
+    overflow-y: auto;
+    height: 100%;
+    padding-bottom: 120px;
+    box-sizing: border-box;
+}
+
+#page-projects::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.countprojects {
+    padding-bottom: 156px;
+    font-size: 128px;
+    margin: 0;
+    color: #000000;
+    padding-top: 64px;
+}
+
+.projects-filter {
+    display: flex;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: fit-content;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    font-family: 'SUPA Bakema', 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: #000000;
+    padding-bottom: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    cursor: pointer;
+    margin-right: 12px;
+    box-shadow: inset 0 0px 0 transparent;
+    transition: box-shadow 0.2s ease;
+}
+
+.filter-btn:last-child {
+    margin-right: 0;
+}
+
+.filter-btn:not(.active):hover {
+    opacity: 1;
+    box-shadow: inset 0 -4px 0 #d9d9d9;
+}
+
+.filter-btn.active {
+    opacity: 1;
+    box-shadow: inset 0 -2px 0 #000000; 
+}
+
+.projects-filter:hover .filter-btn.active:not(:hover) {
+    box-shadow: inset 0 -1px 0 #b7b7b7; 
+}
+
+.projects-filter .filter-btn.active:hover {
+    box-shadow: inset 0 -2px 0 #000000;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding-right: 64px;
+    box-sizing: border-box;
+}
+
+.project-card.hide {
+    display: none;
+}
+
+.project-card img,
+.project-card video {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+    object-fit: cover;
+    object-position: center;
+}
+
+.project-card:hover img,
+.project-card:hover video {
+    transform: scale(1.01);
+}
+
+/* ==========================================================================
+   5. ЭФФЕКТЫ КАРТОЧЕК ПРОЕКТОВ (ZOOM INSIDE И КРАСНАЯ ТОЧКА)
+   ========================================================================== */
+.project-card {
+    position: relative;
+    box-sizing: border-box;
+    transition: z-index 0.3s step-start;
+    z-index: 1;
+}
+
+.project-card:hover {
+    z-index: 100;
+}
+
+.project-img-wrapper {
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    aspect-ratio: 4 / 3;
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.01);
+}
+
+.project-card-info {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 24px;
+    box-sizing: border-box;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+}
+
+.project-card:hover .project-card-info {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.project-card-title {
+    font-family: 'SUPA Bakema', 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: #000000;
+    margin-bottom: 24px;   
+    margin-top: 0px;   
+}
+
+.project-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-card-tag {
+    font-family: 'Dottective', 'Comic Sans MS', cursive;
+    font-size: 16px;
+    font-weight: 300;
+    color: #000000;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap; 
+}
+
+.icons-hi {
+    height: 16px;
+    width: 16px;
+}
+
+.project-card-dot {
+    width: 24px;
+    height: 24px;
+    background-color: #FF2B00;
+    border-radius: 50%;
+    display: block;
+}
+
+
+/* ==========================================================================
+   6. СТРАНИЦА ОТДЕЛЬНОГО КЕЙСА
+   ========================================================================== */
+body.page-case {
+    background-color: #EFEFEF;
+}
+
+.case-page {
+    overflow-y: auto;
+    height: 100vh;
+    margin-left: 340px;
+    padding-top: 64px;
+    padding-right: 64px;
+    padding-bottom: 120px;
+    box-sizing: border-box;
+    display: block;
+}
+
+.case-page::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #3D83E5;
+    outline: 4px solid #ffffff;
+    outline-offset: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 12px 12px;
+    cursor: pointer;
+    border-radius: 12px;
+    margin-left: 4px;
+}
+
+.project-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.back-btn:hover {
+    background-color: #5295f3;
+}
+
+.back-btn-icon {
+    width: 70px;
+    height: 52px;
+    padding-right: 18px;
+}
+
+.back-btn-text {
+    font-family: 'SUPA Bakema', 'Inter', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #ffffff;
+    padding-right: 18px;
+}
+
+.back-btn-count {
+    font-family: 'SUPA Bakema', 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+.case-tag {
+    font-family: 'Dottective', 'Comic Sans MS', cursive;
+    font-size: 16px;
+    font-weight: 300;
+    color: #000000;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 128px;
+}
+
+.case-tag .icons-hi {
+    width: 16px;
+    height: 16px;
+}
+
+.big-case-description {
+    padding-bottom: 48px;
+    
+}
+
+.case-title {
+    font-family: 'SUPA Bakema', 'Inter', sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    color: #000000;
+    margin-top: 48px;
+    max-width: 850px;
+}
+
+.case-description {
+    font-family: 'SUPA Bakema', 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: #000000;
+    max-width: 850px;
+        line-height: 1.3;
+}
+
+.case-image {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   7. МОБИЛЬНАЯ ВЕРСИЯ (< 700px) — ПОЛНОЭКРАННОЕ МЕНЮ
+   ========================================================================== */
+
+.mobile-menu-btn {
+    display: none;
+}
+
+.mobile-close-text {
+    display: none;
+}
+
+.inrpocess {
+        padding-right: 12px;
+        padding-left: 12px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    background-color: #FFF781;
+    font-size: 24px;
+    margin-bottom: 24px;
+    width: fit-content;
+    border-radius: 20px 20px 20px 0px;
+}
+
+.light-blue-link {
+        background-color: #e1f0ff;
+        color: #000;
+        text-decoration: none;
+}
+
+@media (max-width: 700px) {
+
+    body.page-main {
+    background-image: url('../img/mobilebackground.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+    .countprojects {
+    padding-bottom: 153px;
+    font-size: 128px;
+    margin: 0;
+    color: #000000;
+    padding-top: 16px;
+}
+
+
+    #page-about {
+        overflow-y: auto;
+        height: 100%;
+        -webkit-overflow-scrolling: touch;
+        padding: 12px 12px 100px;
+    }
+
+
+    .back-btn-text {
+        display: none;
+    }
+
+    .back-btn-count {
+        display: none;
+    }
+
+    .back-btn-icon {
+        padding-right: 0;
+    }
+    
+
+    .page-content {
+        margin-left: 24px;
+                margin-right: 24px;
+        box-sizing: border-box;
+    }
+
+    .project-card-info {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+}
+
+    .case-page {
+        margin-left: 0;
+        padding-left: 32px;
+        padding-right: 32px;
+        box-sizing: border-box;
+    }
+
+    .img-of-me {
+        max-width: 100%;
+        height: auto;
+            padding-top: 1px;
+    }
+
+    .projects-filter {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+
+    .filter-btn {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(1, 1fr);
+        padding-right: 0px;
+    }
+
+    .side-menu {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 64px 32px 0;
+        justify-content: flex-start;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 2000;
+    }
+
+    body.mobile-menu-open .side-menu {
+        transform: translateX(0);
+    }
+
+    .lang-switcher {
+        padding-bottom: 64px;
+    }
+
+    .lang-text,
+    .menu-list a {
+        font-size: 32px;
+    }
+
+    .menu-list {
+        gap: 4px;
+    }
+
+    .lang-icon-slot,
+    .menu-icon-slot {
+        width: 40px;
+        height: 40px;
+    }
+
+    .lang-icon,
+    .menu-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .mobile-close-text {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 12px;
+        padding: 43px 40px;
+        box-sizing: border-box;
+        background: none;
+        border: none;
+        font-family: 'SUPA Bakema', 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 24px;
+        color: #ffffff;
+        cursor: pointer;
+        z-index: 1500;
+        background-color: #000000;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        padding: 24px 40px;
+        box-sizing: border-box;
+        background: none;
+        border: none;
+        font-family: 'SUPA Bakema', 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 24px;
+        color: #000000;
+        cursor: pointer;
+        z-index: 1500;
+        background-color: #ffffff;
+    }
+
+    body.mobile-menu-open .mobile-menu-btn {
+        display: none;
+    }
+}
+/* Если внутри ссылки лежит скрытая карточка, полностью скрываем саму ссылку из сетки Grid */
+.project-card-link:has(.project-card.hide) {
+    display: none !important;
+}

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Паша Бурмистров</title>
+    <!-- ИСПРАВЛЕННЫЕ ССЫЛКИ С ДОМЕНОМ FONTS ниже -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="page-main">
+    <nav class="side-menu">
+        <!-- Блок переключения языка -->
+        <div class="lang-switcher">
+            <div class="lang-item active" data-lang="ru">
+                <span class="lang-icon-slot"><img src="icons/global.svg" alt="" class="lang-icon"></span>
+                <span class="lang-text">RU</span>
+            </div>
+            <div class="lang-item" data-lang="en">
+                <span class="lang-icon-slot"></span>
+                <span class="lang-text">EN</span>
+            </div>
+        </div>
+
+        <!-- Блок со ссылками меню -->
+        <ul class="menu-list">
+            <li class="menu-item active" data-page="main" data-icon="icons/big-dot.svg">
+                <span class="menu-icon-slot">
+                    <img src="icons/big-dot.svg" alt="" class="menu-icon">
+                </span>
+                <a href="#" class="menu-link" data-ru="главная" data-en="main">main</a>
+            </li>
+            <li class="menu-item" data-page="about" data-icon="icons/big-dot-yellow.svg">
+                <span class="menu-icon-slot"></span>
+                <a href="#" class="menu-link" data-ru="обо мне" data-en="about me">about me</a>
+            </li>
+            <li class="menu-item" data-page="projects" data-icon="icons/big-dot-grey.svg">
+                <span class="menu-icon-slot"></span>
+                <a href="#" class="menu-link" data-ru="проекты" data-en="projects">projects</a>
+            </li>
+            <li class="menu-item" data-page="contacts" data-icon="icons/big-dot-lightblue.svg">
+                <span class="menu-icon-slot"></span>
+                <a href="#" class="menu-link" data-ru="контакты" data-en="contacts">contacts</a>
+            </li>
+        </ul>
+
+        <!-- Мобильная нижняя плашка закрытия (видна только <700px, когда меню открыто) -->
+<span class="mobile-close-text" data-ru="закрыть" data-en="close">close</span>
+    </nav>
+
+    <button type="button" class="mobile-menu-btn">
+        <img src="icons/menu.svg" alt="Иконка меню">
+        <span data-ru="меню" data-en="menu">menu</span>
+    </button>
+
+    <main class="page-content">
+        <section id="page-main" class="page active">
+            <!-- контент главной -->
+        </section>
+
+        <section id="page-about" class="page">
+        <div class="content-aboutme">   
+                        <video class="img-of-me" src="video/me.mp4"   muted   loop playsinline   autoplay    preload="metadata">
+                      </video>
+
+            <div data-lang-block="ru">
+                <p class="justtext">Привет! Я — Паша Бурмистров</p>
+                <p class="justtext">По паспорту родился в Самаре, но всю юность провёл в <a href="https://www.youtube.com/watch?v=tcgzSxYqQrg&t=8s" class="orange-link" target="_blank">Тольятти </a>, а сейчас раз в пару месяцев переезжаю в разные города — путешествую
+                <p class="justtext">Основная деятельность — интерфейсы, но не люблю разделять дизайнеров на области, поэтому мне также интересно делать графику, физические предметы и остальной дизайн. Иногда рисую на iPad</p>
+                <p class="justtext">Люблю работы Beta Disrupt, Pragmatica, tententen, Ромы Сазонова, charmers и MSCHF</p>
+            </div>
+
+            <div data-lang-block="en">
+                <p class="justtext">Hi! I’m Pasha Burmistrov</p>
+                <p class="justtext">Officially, I was born in Samara, but I spent my entire youth in <a href="https://www.youtube.com/watch?v=tcgzSxYqQrg&t=8s" class="orange-link" target="_blank">Tolyatti</a> now, I move to different cities every couple of months — I travel
+                <p class="justtext">My primary focus is interfaces, but I don’t like pigeonholing designers into specific areas, so I’m also interested in creating graphics, physical objects, and other types of design. Sometimes I draw on my iPad</p>
+                <p class="justtext">I love the work of Beta Disrupt, Pragmatica, tententen, Roma Sazonov, charmers, and MSCHF</p>
+            </div>
+
+        </div>
+        </section>
+
+        <section id="page-projects" class="page">
+            <p class="countprojects">57</p>
+
+            <!-- Фильтры (меню переключения) -->
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all" data-ru="все" data-en="all">all</button>
+                <button class="filter-btn" data-filter="interface" data-ru="интерфейс" data-en="interface">interface</button>
+                <button class="filter-btn" data-filter="graphic" data-ru="графика" data-en="graphic">graphic</button>
+                <button class="filter-btn" data-filter="physical" data-ru="физический предмет" data-en="physical item">physical item</button>
+                <button class="filter-btn" data-filter="idea" data-ru="идея" data-en="idea">idea</button>
+            </div>
+
+            <!-- Сетка с кейсами/картинками -->
+            <div class="projects-grid">
+                <!-- Кейс 1 -->
+                <a href="case1_izicosm.html" class="project-card-link">
+                                    <div class="project-card" data-type="interface">
+                    <div class="project-img-wrapper">
+                       <video class="project-card-media" src="img/IZICOSM/oblojka.mp4"   muted   loop playsinline       preload="metadata">
+                      </video>
+                    </div>
+                    <div class="project-card-info">
+                        <h3 class="project-card-title" data-ru="Промо-сайт косметики «IZICOSM»" data-en="Promo website for IZICOSM cosmetics">Промо-сайт косметики «IZICOSM»</h3>
+                        <div class="project-card-meta">
+                            <span class="project-card-tag">             <img src="icons/hi.svg" class="icons-hi"> interface</span>
+                            <span class="project-card-dot"></span>
+                        </div>
+                    </div>
+                </div>
+                 </a>
+
+
+                <!-- Кейс 2 -->
+                        <a href="case2_banneriHSE.html" class="project-card-link">
+                <div class="project-card" data-type="graphic">
+                    <div class="project-img-wrapper">
+                        <img src="img/HSE/oblojka.jpg" alt="Project 2">
+                    </div>
+                    <div class="project-card-info">
+                        <h3 class="project-card-title" data-ru="Баннеры для ВШЭ. Программа «Системная семейная психология»" data-en="Banners for HSE. «Systemic Family Psychology» program">Баннеры для ВШЭ. Программа «Системная семейная психология»</h3>
+                        <div class="project-card-meta">
+                            <span class="project-card-tag"> <img src="icons/hi.svg" class="icons-hi"> graphic</span>
+                            <span class="project-card-dot"></span>
+                        </div>
+                    </div>
+                </div>
+                        </a>
+
+                <!-- Кейс 3 -->
+                        <a href="case4_miniapp.html" class="project-card-link">
+                                                      <div class="project-card" data-type="interface">
+                    <div class="project-img-wrapper">
+                        <img src="img/MINIAPP/oblojka.jpg" alt="Project 3">
+                    </div>
+                    <div class="project-card-info">
+                        <h3 class="project-card-title" data-ru="Мини-апп VPN сервиса Pulkin (+десктоп)" data-en="Mini-app for Pulkin VPN service (+desktop)">Мини-апп VPN сервиса Pulkin (+десктоп)</h3>
+                        <div class="project-card-meta">
+                            <span class="project-card-tag"> <img src="icons/hi.svg" class="icons-hi"> interface</span>
+                            <span class="project-card-dot"></span>
+                        </div>
+                    </div>
+                </div>
+                                        </a>
+
+                <!-- Кейс 4 -->
+                                         <a href="case3_NZRUSSIA.html" class="project-card-link">
+                                    
+                                                            <div class="project-card" data-type="interface">
+<div class="project-img-wrapper">
+    <video class="project-card-media"
+           src="img/RUSSIA/oblojka.mp4"
+           muted
+           loop
+           playsinline
+           preload="metadata">
+    </video>
+</div>
+                    <div class="project-card-info">
+                        <h3 class="project-card-title" data-ru="Редизайн сайта национального центра «Россия»" data-en="Redesign of the «Russia» National Center website">Редизайн сайта национального центра «Россия»</h3>
+                        <div class="project-card-meta">
+                            <span class="project-card-tag"> <img src="icons/hi.svg" class="icons-hi"> interface</span>
+                            <span class="project-card-dot"></span>
+                        </div>
+                    </div>
+                </div>
+                                        </a>
+                 <!-- Кейс 5 -->
+                                          <a href="case5_hoodie_zavtrak.html" class="project-card-link">
+                                                        <div class="project-card" data-type="physical">
+                    <div class="project-img-wrapper">
+                        <img src="img/hoodie zavtrak/oblojka.jpg" alt="Project 4">
+                    </div>
+                    <div class="project-card-info">
+                        <h3 class="project-card-title" data-ru="Худи «Завтрак, обед и ужин»" data-en="«Breakfast, Lunch and Dinner» hoodie">Худи «Завтрак, обед и ужин»</h3>
+                        <div class="project-card-meta">
+                            <span class="project-card-tag"> <img src="icons/hi.svg" class="icons-hi">physical item</span>
+                            <span class="project-card-dot"></span>
+                        </div>
+                    </div>
+                </div></a>
+                    <a href="case8_hoodie-befree.html" class="project-card-link">
+                                <div class="project-card" data-type="physical" >
+                    <div class="project-img-wrapper">
+                        <img src="img/hoodie-befree/oblojka.jpg" alt="Project 4">
+                    </div>
+                    <div class="project-card-info">
+                        <h3 class="project-card-title" data-ru="Худи для Befree на День всех влюблённых" data-en="Valentine's Day hoodie for Befree">Худи для Befree на День всех влюблённых</h3>
+                        <div class="project-card-meta">
+                            <span class="project-card-tag"> <img src="icons/hi.svg" class="icons-hi">physical item</span>
+                            <span class="project-card-dot"></span>
+                        </div>
+                    </div>
+                </div>
+                    </a>
+                                 <!-- Кейс 6 -->
+                    <a href="case6_zinpoglubje.html" class="project-card-link">
+                                <div class="project-card" data-type="graphic" >
+                    <div class="project-img-wrapper">
+                        <img src="img/poglubje/oblojka.jpg" alt="Project 4">
+                    </div>
+                    <div class="project-card-info">
+                        <h3 class="project-card-title" data-ru="6 разворотов в ЗИНе «Поглубже»" data-en="6 spreads in the «Poglubje» zine">6 разворотов в ЗИНе «Поглубже»</h3>
+                        <div class="project-card-meta">
+                            <span class="project-card-tag"> <img src="icons/hi.svg" class="icons-hi">physical item & graphic</span>
+                            <span class="project-card-dot"></span>
+                        </div>
+                    </div>
+                </div>
+                                                        <!-- Кейс 8 -->
+                <a href="case9_zavtrakchanel.html" class="project-card-link">
+                <div class="project-card" data-type="idea" >
+                    <div class="project-img-wrapper">
+                        <img src="img/zavtrak/oblojka.jpg" alt="Project 4">
+                    </div>
+                    <div class="project-card-info">
+                        <h3 class="project-card-title" data-ru="Телеграм-канал «Завтрак, обед и ужин»" data-en="«Breakfast, Lunch and Dinner» Telegram channel">Телеграм-канал «Завтрак, обед и ужин»</h3>
+                        <div class="project-card-meta">
+                            <span class="project-card-tag"> <img src="icons/hi.svg" class="icons-hi">idea</span>
+                            <span class="project-card-dot"></span>
+                        </div>
+                    </div>
+                </div>
+                </a>
+                                                                        <!-- Кейс 9 -->
+                <a href="case10_calendarpaint.html" class="project-card-link">
+                                        <div class="project-card" data-type="graphic" >
+                    <div class="project-img-wrapper">
+                        <img src="img/kalendar/oblojka.jpg" alt="Project 4">
+                    </div>
+                    <div class="project-card-info">
+                    
+                                                <div class="inrpocess" data-ru="В процессе" data-en="In process">В процессе</div>
+                        <h3 class="project-card-title" data-ru="Календарь в Paint" data-en="Calendar made in Paint">Календарь в Paint</h3>
+                        <div class="project-card-meta">
+                            <span class="project-card-tag"> <img src="icons/hi.svg" class="icons-hi">graphic, physical item</span>
+                            <span class="project-card-dot"></span>
+                        </div>
+                    </div>
+                </div>
+                    </a>
+                                                                        <!-- Кейс 9 -->
+
+                                                                </a>
+                                      <!-- Кейс 6 -->
+                    <a href="case7_kupitkartinu.html" class="project-card-link">
+                                                                    <div class="project-card" data-type="interface" >
+                    <div class="project-img-wrapper">
+                        <img src="img/kk/oblojka.jpg" alt="Project 4">
+                    </div>
+                    <div class="project-card-info">
+                        <h3 class="project-card-title" data-ru="Редизайн сервиса по купле-продаже искусства «Купить картину»" data-en="Redesign of the «Kupit Kartinu» art marketplace">Редизайн сервиса по купле-продаже искусства «Купить картину»</h3>
+                        <div class="project-card-meta">
+                            <span class="project-card-tag"> <img src="icons/hi.svg" class="icons-hi">interface</span>
+                            <span class="project-card-dot"></span>
+                        </div>
+                    </div>
+                </div>    
+                </a>
+
+                
+
+                                      <!-- Кейс 7 -->
+                <a href="case11_inmunteh.html" class="project-card-link">
+                <div class="project-card" data-type="interface" >
+                    <div class="project-img-wrapper">
+                        <img src="img/inmunteh/oblojka.mov" alt="Project 4">
+                    </div>
+                    <div class="project-card-info">
+                        <h3 class="project-card-title" data-ru="Редизайн промо-сайта аллерго-теста ALEX2" data-en="Redesign of the ALEX2 allergy test promo website">Редизайн промо-сайта аллерго-теста ALEX2</h3>
+                        <div class="project-card-meta">
+                            <span class="project-card-tag"> <img src="icons/hi.svg" class="icons-hi">interface</span>
+                            <span class="project-card-dot"></span>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="page-contacts" class="page">
+            <div data-lang-block="ru">
+                    <p class="justtext">
+                     Это мой <a href="https://t.me/theburmistrov" class="blue-link" target="_blank">личный Телеграм</a>
+                  <br>
+                   Также у меня есть <a href="https://www.instagram.com/theburmistrov/" class="blue-link" target="_blank">Ins.....</a>
+                  <br>
+                     Ещё веду <a href="https://t.me/dearburmistrov" class="blue-link" target="_blank">Телеграм-канал</a>
+             </p>
+            </div>
+            <div data-lang-block="en">
+                                    <p class="justtext">
+                   This is my <a href="https://t.me/theburmistrov" class="blue-link" target="_blank">personal Telegram</a>
+    <br>
+    I also have a <a href="https://www.instagram.com/theburmistrov/" class="blue-link" target="_blank">Ins......</a>
+    <br>
+    And write for <a href="https://t.me/dearburmistrov" class="blue-link" target="_blank">Telegram channel</a></div>
+                                    </p>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
