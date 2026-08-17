@@ -543,6 +543,10 @@ body.page-case {
         text-decoration: none;
 }
 
+.light-blue-link:hover {
+        background-color: #d3e9ff;
+}
+
 @media (max-width: 700px) {
 
     body.page-main {
