@@ -89,6 +89,8 @@ html.lang-en [data-lang-block="en"] {
 #page-about {
     box-sizing: border-box;
         overflow-y: auto;
+        
+        
 }
 
 .img-of-me {
@@ -544,6 +546,15 @@ body.page-case {
 }
 
 @media (max-width: 700px) {
+
+    .case-title {
+    font-size: 32px;
+}
+
+.case-description {
+    font-size: 18px;
+
+}
 
     body.page-main {
     background-image: url('../img/mobilebackground.jpg');
