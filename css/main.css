@@ -18,7 +18,7 @@
    ========================================================================== */
 body {
     font-family: 'SUPA Bakema', sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     min-height: 100vh;
     margin: 0;
     overflow: hidden;
@@ -100,7 +100,7 @@ html.lang-en [data-lang-block="en"] {
 
 .justtext {
     font-size: 24px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.3;
     max-width: 700px;
 }
@@ -167,7 +167,7 @@ html.lang-en [data-lang-block="en"] {
 }
 
 .lang-text, .menu-list a {
-    font-weight: 300;
+    font-weight: 400;
     font-size: 24px;
     color: #000000;
     text-decoration: none;
@@ -241,7 +241,7 @@ html.lang-en [data-lang-block="en"] {
     border: none;
     font-family: 'SUPA Bakema', 'Inter', sans-serif;
     font-size: 24px;
-    font-weight: 300;
+    font-weight: 400;
     color: #000000;
     padding-bottom: 6px;
     padding-left: 8px;
@@ -355,7 +355,7 @@ html.lang-en [data-lang-block="en"] {
 .project-card-title {
     font-family: 'SUPA Bakema', 'Inter', sans-serif;
     font-size: 24px;
-    font-weight: 300;
+    font-weight: 400;
     color: #000000;
     margin-bottom: 24px;   
     margin-top: 0px;   
@@ -370,7 +370,7 @@ html.lang-en [data-lang-block="en"] {
 .project-card-tag {
     font-family: 'Dottective', 'Comic Sans MS', cursive;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 400;
     color: #000000;
     text-transform: uppercase;
     display: flex;
@@ -458,14 +458,14 @@ body.page-case {
 .back-btn-count {
     font-family: 'SUPA Bakema', 'Inter', sans-serif;
     font-size: 24px;
-    font-weight: 300;
+    font-weight: 400;
     color: #ffffff;
 }
 
 .case-tag {
     font-family: 'Dottective', 'Comic Sans MS', cursive;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 400;
     color: #000000;
     text-transform: uppercase;
     display: flex;
@@ -496,7 +496,7 @@ body.page-case {
 .case-description {
     font-family: 'SUPA Bakema', 'Inter', sans-serif;
     font-size: 24px;
-    font-weight: 300;
+    font-weight: 400;
     color: #000000;
     max-width: 850px;
         line-height: 1.3;
