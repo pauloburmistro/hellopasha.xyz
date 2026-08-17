@@ -1,13 +1,9 @@
 /* ==========================================================================
    0. ПОДКЛЮЧЕНИЕ КАСТОМНОГО ШРИФТА
-   ========================================================================== */
-@font-face {
-    font-family: 'SUPA Bakema';
-    src: url('../fonts/noddef_supa-bakema_vsds-2.otf') format('opentype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
+
+   
+*/
+
 
 @font-face {
     font-family: 'Dottective';
@@ -27,6 +23,7 @@ body {
     margin: 0;
     overflow: hidden;
     height: 100%;
+    zoom: 80%;
 }
 
 body.page-main {
