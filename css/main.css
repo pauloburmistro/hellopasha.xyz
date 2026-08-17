@@ -23,7 +23,6 @@ body {
     margin: 0;
     overflow: hidden;
     height: 100%;
-    zoom: 80%;
 }
 
 body.page-main {
