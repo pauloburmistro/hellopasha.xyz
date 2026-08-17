@@ -94,7 +94,7 @@ html.lang-en [data-lang-block="en"] {
 .img-of-me {
     height: 250px;
     width: 380px;
-    padding-bottom: 18px;
+    padding-bottom: 21px;
     padding-top: 64px;
 }
 
@@ -222,7 +222,7 @@ html.lang-en [data-lang-block="en"] {
 }
 
 .countprojects {
-    padding-bottom: 156px;
+    padding-bottom: 139px;
     font-size: 128px;
     margin: 0;
     color: #000000;
