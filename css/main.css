@@ -38,7 +38,7 @@ body.page-projects { background-color: #EFEFEF; }
 body.page-contacts { background-color: #8FC5FF; }
 
 .page-contacts {
-    padding-top: 399px;
+    padding-top: 402px;
 }
 
 [data-lang-block] {
@@ -96,7 +96,7 @@ html.lang-en [data-lang-block="en"] {
 .img-of-me {
     height: 250px;
     width: 380px;
-    padding-bottom: 21px;
+    padding-bottom: 22px;
     padding-top: 64px;
 }
 
@@ -224,7 +224,7 @@ html.lang-en [data-lang-block="en"] {
 }
 
 .countprojects {
-    padding-bottom: 139px;
+    padding-bottom: 144px;
     font-size: 128px;
     margin: 0;
     color: #000000;
