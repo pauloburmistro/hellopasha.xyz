@@ -33,9 +33,9 @@ body.page-main {
     background-attachment: fixed;
 }
 
-body.page-about { background-color: #FFD87C; }
+body.page-about { background-color: #ffda8b; }
 body.page-projects { background-color: #EFEFEF; }
-body.page-contacts { background-color: #8FC5FF; }
+body.page-contacts { background-color: #c3e0ff; }
 
 .page-contacts {
     padding-top: 402px;
@@ -110,24 +110,28 @@ html.lang-en [data-lang-block="en"] {
 .orange-link {
     color: #000000;
     text-decoration: none;
-    background-color: #ffc65c;
+    background-color: #fbc561;
     padding: 0px;
     display: inline-block;
+      transition: transform 0.3s ease;
 }
 
 .orange-link:hover {
-    background-color: #ffbc40;
+    background-color: #ffb327;
+      transform: translateY(-3px);
 }
 
 .blue-link {
     color: #000000;
     text-decoration: none;
-    background-color: #81baff;
+    background-color: #a5cdff;
     padding: 0px;
     display: inline-block;
+          transition: transform 0.3s ease;
 }
 .blue-link:hover {
-    background-color: #6fb0ff;
+    background-color: #7eb8ff;
+          transform: translateY(-3px);
 }
 
 /* ==========================================================================
@@ -311,14 +315,17 @@ html.lang-en [data-lang-block="en"] {
     box-sizing: border-box;
     transition: z-index 0.3s step-start;
     z-index: 1;
+      transition: transform 0.5s ease;
 }
 
 .project-card:hover {
     z-index: 100;
+  transform: translateY(-5px);
 }
 
 .project-img-wrapper {
     width: 100%;
+        position: relative;
     overflow: hidden;
     display: block;
     aspect-ratio: 4 / 3;
@@ -353,6 +360,7 @@ html.lang-en [data-lang-block="en"] {
     visibility: visible;
     transform: translateY(0);
 }
+
 
 .project-card-title {
     font-family: 'SUPA Bakema', 'Inter', sans-serif;
@@ -437,7 +445,9 @@ body.page-case {
     text-decoration: none;
     color: inherit;
     display: block;
+
 }
+
 
 .back-btn:hover {
     background-color: #5295f3;
@@ -524,25 +534,39 @@ body.page-case {
 }
 
 .inrpocess {
-        padding-right: 12px;
-        padding-left: 12px;
-        padding-top: 8px;
-        padding-bottom: 8px;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     background-color: #FFF781;
-    font-size: 24px;
+    font-size: 21px;
     margin-bottom: 24px;
     width: fit-content;
     border-radius: 20px 20px 20px 0px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.project-card:hover .inrpocess {
+    opacity: 1;
+    visibility: visible;
 }
 
 .light-blue-link {
-        background-color: #e1f0ff;
+       display: inline-block;   
+        background-color: #d8d8d8;
         color: #000;
         text-decoration: none;
+        transition: transform 0.3s ease;
 }
 
 .light-blue-link:hover {
-        background-color: #d3e9ff;
+        background-color: #ffffff;
+        transform: translateY(-3px);
 }
 
 @media (max-width: 700px) {
