@@ -17,7 +17,7 @@
    1. ГЛОБАЛЬНЫЕ НАСТРОЙКИ СТРАНИЦЫ И БАЗОВЫЕ КЛАССЫ
    ========================================================================== */
 body {
-    font-family: 'SUPA Bakema', 'Inter', sans-serif;
+    font-family: 'SUPA Bakema', sans-serif;
     font-weight: 400;
     min-height: 100vh;
     margin: 0;
