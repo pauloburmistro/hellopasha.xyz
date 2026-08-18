@@ -439,6 +439,7 @@ body.page-case {
     cursor: pointer;
     border-radius: 12px;
     margin-left: 4px;
+    transition: transform 0.3s ease;
 }
 
 .project-card-link {
@@ -451,6 +452,7 @@ body.page-case {
 
 .back-btn:hover {
     background-color: #5295f3;
+              transform: translateY(-3px);
 }
 
 .back-btn-icon {
