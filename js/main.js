@@ -46,14 +46,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // === 1. ЛОГИКА ПЕРЕКЛЮЧЕНИЯ СТРАНИЦ МЕНЮ (ПРИ КЛИКЕ) ===
-link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const pageId = item.dataset.page;
-    activatePage(pageId);
-    
-    // Прописываем хэш в адресную строку, чтобы ссылку можно было скопировать
-    history.pushState(null, null, '#' + pageId);
-});
+    menuItems.forEach(item => {
+        const link = item.querySelector('.menu-link');
+        if (!link) return;
+
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const pageId = item.dataset.page;
+            activatePage(pageId);
+
+            // Прописываем хэш в адресную строку, чтобы ссылку можно было скопировать
+            history.pushState(null, null, '#' + pageId);
+        });
+    });
 
     // === 2. ОПРЕДЕЛЕНИЕ СТРАНИЦЫ ПРИ ЗАГРУЗКЕ ИЛИ ПЕРЕЗАГРУЗКЕ ===
     function initPagePosition() {
